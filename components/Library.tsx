@@ -62,7 +62,7 @@ const Library = () => {
         px-3     
       "
       >
-        List of Songs! 29.00
+        List of Songs!
       </div>
     </div>
   );
