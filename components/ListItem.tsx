@@ -20,6 +20,7 @@ const ListItem: React.FC<ListItemProps> = ({ image, href, name }) => {
 
   return (
     <button
+      onClick={onClick}
       className="
         relative 
         flex
@@ -46,7 +47,7 @@ const ListItem: React.FC<ListItemProps> = ({ image, href, name }) => {
       <p
         className="
             font-medium
-            truncate
+            truncate 
             py-5
         "
       >
@@ -54,10 +55,21 @@ const ListItem: React.FC<ListItemProps> = ({ image, href, name }) => {
       </p>
       <div
         className="
-
+            absolute
+            transition
+            opacity-0
+            rounded-full
+            flex
+            items-center
+            bg-green-500
+            p-4
+            drop-shadow-md
+            right-5
+            group-hover:opacity-100
+            hover:scale-110
         "
       >
-        <FaPlay />
+        <FaPlay className="text-black" />
       </div>
     </button>
   );
