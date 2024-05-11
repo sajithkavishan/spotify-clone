@@ -1,13 +1,21 @@
+import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 import Image from "next/image";
+import { DiVim } from "react-icons/di";
 
-export default function Home() {
+import PageContent from "./components/PageContent";
+
+export const revalidate = 0;
+
+export default async function Home() {
+  const songs = await getSongs();
+
   return (
     <div
       className="
     bg-neutral-900
-    rounded-lg
+    rounded-lg 
     h-full
     w-full
     overflow-hidden
@@ -20,7 +28,7 @@ export default function Home() {
             className="
               text-white
               text-3xl
-              font-semibold
+              font-semibold 
             "
           >
             Welcome back
@@ -68,7 +76,7 @@ export default function Home() {
             Newest songs
           </h1>
         </div>
-        <div>List of Songs!</div>
+        <PageContent songs={songs} />
       </div>
     </div>
   );
